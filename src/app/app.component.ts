@@ -7,4 +7,10 @@ import { COURSES } from "../db-data";
   styleUrls: ["./app.component.css"],
   standalone: false,
 })
-export class AppComponent {}
+export class AppComponent {
+  coreCourse = COURSES[0];
+
+  rxjsCourse = COURSES[1];
+
+  ngrxCourse = COURSES[2];
+}
