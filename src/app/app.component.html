@@ -7,6 +7,8 @@
 
 <div class="courses">
   @for(course of courses; track course.id;) { @if($first) {
+  <!-- for tracking with a custom function @for(course of courses; track courseTracker;) { @if($first) { -->
+  <!-- last resort @for(course of courses; track $index;) { @if($first) { -->
   <h1>{{ $count }} courses available</h1>
   <course-card
     [course]="course"

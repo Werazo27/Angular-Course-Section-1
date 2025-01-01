@@ -15,4 +15,9 @@ export class AppComponent {
     console.log("course selected");
     console.log(course);
   }
+
+  // courseTracker(index: number, course: Course) {
+  //   return course.id;
+  //   // For when you need to track multiple properties
+  // }
 }
