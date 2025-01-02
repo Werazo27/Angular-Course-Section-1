@@ -1,6 +1,13 @@
 <div class="course-card">
-  <div class="course-title">{{ courseNumber }} {{ course.description }}</div>
-  <img width="300" alt="Angular Logo" [src]="course.iconUrl" />
+  <div class="course-title">{{ courseNumber + " " + course.description }}</div>
+
+  @if (course.iconUrl && course.altText) {
+  <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
+  } @else if (course.iconUrl) {
+  <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
+  } @else {
+  <h2>No photo available</h2>
+  }
 
   <div class="course-description">{{ course.longDescription }}</div>
   <button (click)="onViewCourse()">View Course</button>
