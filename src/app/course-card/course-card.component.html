@@ -1,9 +1,11 @@
 <div class="course-card">
-  <div class="course-title">{{ courseNumber + " " + course.description }}</div>
+  <div class="course-title">
+    {{ courseNumber + " - " + course.description }}
+  </div>
 
   @if (course.iconUrl && course.altText) {
   <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
-  } @else if (course.iconUrl) {
+  } @else if (course.iconUrl && !course.altText) {
   <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
   } @else {
   <h2>No photo available</h2>
