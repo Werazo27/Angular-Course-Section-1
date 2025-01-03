@@ -13,7 +13,7 @@
   <course-card
     [course]="course"
     (courseSelected)="onCourseSelected($event)"
-    [courseNumber]="index + 1"
+    [courseNumber]="$index + 1"
     [class.is-first]="$first"
     [class.is-last]="$last"
     [class.is-even]="$even"

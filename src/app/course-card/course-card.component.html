@@ -1,3 +1,4 @@
+@if (course) {
 <div class="course-card">
   <div class="course-title">
     {{ courseNumber + " - " + course.description }}
@@ -14,3 +15,27 @@
   <div class="course-description">{{ course.longDescription }}</div>
   <button (click)="onViewCourse()">View Course</button>
 </div>
+}
+
+<!-- <div class="course-card" *ngIf="course">
+  <div class="course-title">
+    {{ courseNumber + " - " + course.description }}
+  </div>
+
+  <img
+    width="300"
+    [alt]="course.altText"
+    [src]="course.iconUrl"
+    *ngIf="course.iconUrl && course.altText"
+  />
+  <img
+    width="300"
+    alt="Course Cover Photo"
+    [src]="course.iconUrl"
+    *ngIf="course.iconUrl && !course.altText"
+  />
+  <h2 *ngIf="!course.iconUrl">No photo available</h2>
+
+  <div class="course-description">{{ course.longDescription }}</div>
+  <button (click)="onViewCourse()">View Course</button>
+</div> -->
