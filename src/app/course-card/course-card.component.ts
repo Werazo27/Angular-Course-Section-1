@@ -4,7 +4,7 @@ import { NgIf } from "@angular/common";
 
 @Component({
   selector: "course-card",
-  imports: [NgIf],
+  imports: [],
   templateUrl: "./course-card.component.html",
   styleUrl: "./course-card.component.css",
 })
