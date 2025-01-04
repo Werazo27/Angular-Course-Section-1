@@ -18,6 +18,7 @@
     [class.is-last]="$last"
     [class.is-even]="$even"
     [class.is-odd]="$odd"
+    [ngStyle]="cardStyles(course)"
   />
   } @else {
   <course-card
@@ -28,6 +29,7 @@
     [class.is-last]="$last"
     [class.is-even]="$even"
     [class.is-odd]="$odd"
+    [ngStyle]="cardStyles(course)"
   />
   } } @empty {
   <h1>No courses are available</h1>
