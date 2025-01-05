@@ -59,7 +59,7 @@ export const COURSES: any = [
       "Learn Angular Progressive Web Applications, build the future of the Web Today.",
     iconUrl:
       "https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png",
-    category: "ADVANCED",
+    category: "UNKNOWN",
     lessonsCount: 8,
   },
   {

@@ -23,9 +23,9 @@ export class AppComponent {
 
   cardStyles(course: Course) {
     if (course.category === "INTERMEDIATE") {
-      return { "margin-left": "-30%" };
+      return { "margin-left": "-30%", "margin-right": "30%" };
     } else if (course.category === "ADVANCED") {
-      return { "margin-right": "-30%" };
+      return { "margin-right": "-30%", "margin-left": "30%" };
     }
   }
 }
