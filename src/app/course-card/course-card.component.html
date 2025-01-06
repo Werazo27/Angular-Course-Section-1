@@ -30,33 +30,37 @@
 </div>
 }
 
-<!-- <div class="course-card" *ngIf="course">
-  <div class="course-title">
-    {{ courseNumber + " - " + course.description }}
-  </div>
-
-  <img
-    width="300"
-    [alt]="course.altText"
-    [src]="course.iconUrl"
-    *ngIf="course.iconUrl && course.altText"
-  />
-  <img
-    width="300"
-    alt="Course Cover Photo"
-    [src]="course.iconUrl"
-    *ngIf="course.iconUrl && !course.altText"
-  />
-  <h2 *ngIf="!course.iconUrl">No photo available</h2>
-
-  <div class="course-description">{{ course.longDescription }}</div>
-
-  <div class="course-category" [ngSwitch]="course.category">
-    <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
-    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
-    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
-    <div class="category" *ngSwitchDefault>Unknown</div>
-  </div>
-
-  <button (click)="onViewCourse()">View Course</button>
-</div> -->
+<!-- 
+<ng-container *ngIf="course"> *for when there's no wrapper to put structural directives on
+  <div class="course-card">
+    <div class="course-title">
+      {{ courseNumber + " - " + course.description }}
+    </div>
+  
+    <img
+      width="300"
+      [alt]="course.altText"
+      [src]="course.iconUrl"
+      *ngIf="course.iconUrl && course.altText"
+    />
+    <img
+      width="300"
+      alt="Course Cover Photo"
+      [src]="course.iconUrl"
+      *ngIf="course.iconUrl && !course.altText"
+    />
+    <h2 *ngIf="!course.iconUrl">No photo available</h2>
+  
+    <div class="course-description">{{ course.longDescription }}</div>
+  
+    <div class="course-category" [ngSwitch]="course.category">
+      <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+      <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+      <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+      <div class="category" *ngSwitchDefault>Unknown</div>
+    </div>
+  
+    <button (click)="onViewCourse()">View Course</button>
+  </div> 
+</ng-container>
+-->
