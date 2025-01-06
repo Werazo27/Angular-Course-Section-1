@@ -34,7 +34,7 @@
 <ng-container *ngIf="course"> *for when there's no wrapper to put structural directives on
   <div class="course-card">
     <div class="course-title">
-      {{ courseNumber + " - " + course.description }}
+      {{ courseNumber + " - " + course.description | titlecase }}
     </div>
   
     <img

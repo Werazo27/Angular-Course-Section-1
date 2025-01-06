@@ -35,21 +35,25 @@
   <h1>No courses are available</h1>
   }
 
-  <!-- <course-card
-    *ngFor="
-      let course of courses;
-      index as i;
-      first as isFirst;
-      last as isLast;
-      even as isEven;
-      odd as isOdd
-    "
-    [course]="course"
-    (courseSelected)="onCourseSelected($event)"
-    [courseNumber]="i + 1"
-    [class.is-first]="isFirst"
-    [class.is-last]="isLast"
-    [class.is-even]="isEven"
-    [class.is-odd]="isOdd"
-  /> -->
+  <!-- 
+    <h1>{{ courses.length | number : "3." }} courses available</h1>
+    <course-card
+      *ngFor="
+        let course of courses | slice: 0:4 (second digit not included);
+        index as i;
+        first as isFirst;
+        last as isLast;
+        even as isEven;
+        odd as isOdd  
+      "
+      [course]="course"
+      (courseSelected)="onCourseSelected($event)"
+      [courseNumber]="i + 1"
+      [class.is-first]="isFirst"
+      [class.is-last]="isLast"
+      [class.is-even]="isEven"
+      [class.is-odd]="isOdd"
+    /> 
+    {{ courses | json }} *useful for checking data while debugging
+  -->
 </div>
