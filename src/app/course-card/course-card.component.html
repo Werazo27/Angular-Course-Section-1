@@ -1,7 +1,7 @@
 @if (course) {
 <div class="course-card" [ngClass]="cardClasses()">
   <div class="course-title">
-    {{ courseNumber + " - " + course.description }}
+    {{ courseNumber || "" }} {{ course.description }}
   </div>
 
   @if (course.iconUrl && course.altText) {
@@ -41,15 +41,12 @@
       width="300"
       [alt]="course.altText"
       [src]="course.iconUrl"
-      *ngIf="course.iconUrl && course.altText"
+      *ngIf="course.iconUrl; else noImage"
     />
-    <img
-      width="300"
-      alt="Course Cover Photo"
-      [src]="course.iconUrl"
-      *ngIf="course.iconUrl && !course.altText"
-    />
-    <h2 *ngIf="!course.iconUrl">No photo available</h2>
+    
+    <ng-template #noImage>
+      <p>No image is available</p>
+    </ng-template>
   
     <div class="course-description">{{ course.longDescription }}</div>
   

@@ -56,4 +56,9 @@
     /> 
     {{ courses | json }} *useful for checking data while debugging
   -->
+
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[0]"
+  />
 </div>

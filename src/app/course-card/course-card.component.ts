@@ -20,9 +20,7 @@ export class CourseCardComponent {
   })
   course: Course;
 
-  @Input({
-    required: true,
-  })
+  @Input({})
   courseNumber: number;
 
   @Output("courseSelected")

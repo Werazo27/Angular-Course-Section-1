@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { COURSES } from "../db-data";
 import { Course } from "./model/course";
+import { CourseCardComponent } from "./course-card/course-card.component";
 
 @Component({
   selector: "app-root",
@@ -11,9 +12,11 @@ import { Course } from "./model/course";
 export class AppComponent {
   courses = COURSES;
 
+  @ViewChild(CourseCardComponent)
+  card: CourseCardComponent;
+
   onCourseSelected(course: Course) {
-    console.log("course selected");
-    console.log(course);
+    console.log(this.card);
   }
 
   // courseTracker(index: number, course: Course) {
