@@ -15,9 +15,9 @@ export class AppComponent {
   @ViewChild(CourseCardComponent)
   card: CourseCardComponent;
 
-  onCourseSelected(course: Course) {
-    console.log(this.card);
-  }
+  // onCourseSelected(course: Course) {
+  //   console.log(this.card);
+  // }
 
   // courseTracker(index: number, course: Course) {
   //   return course.id;
