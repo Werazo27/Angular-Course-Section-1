@@ -5,7 +5,7 @@
   />
 </div>
 
-<div class="courses">
+<div class="courses" #container>
   @for(course of courses; track course.id;) { @if($first) {
   <!-- for tracking with a custom function @for(course of courses; track courseTracker; let index = $index) { @if($first) { -->
   <!-- last resort @for(course of courses; track $index;) { @if($first) { -->
@@ -58,7 +58,14 @@
   -->
 
   <course-card
-    (courseSelected)="onCourseSelected($event)"
+    #card1
+    (courseSelected)="onCourseSelected()"
     [course]="courses[0]"
+  />
+
+  <course-card
+    #card2
+    (courseSelected)="onCourseSelected()"
+    [course]="courses[1]"
   />
 </div>

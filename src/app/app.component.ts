@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { COURSES } from "../db-data";
 import { Course } from "./model/course";
 import { CourseCardComponent } from "./course-card/course-card.component";
@@ -12,12 +12,20 @@ import { CourseCardComponent } from "./course-card/course-card.component";
 export class AppComponent {
   courses = COURSES;
 
-  @ViewChild(CourseCardComponent)
-  card: CourseCardComponent;
+  @ViewChild("card1", { read: ElementRef })
+  card1: CourseCardComponent;
 
-  // onCourseSelected(course: Course) {
-  //   console.log(this.card);
-  // }
+  @ViewChild("card2", { read: ElementRef })
+  card2: CourseCardComponent;
+
+  @ViewChild("container")
+  containerDiv: ElementRef;
+
+  onCourseSelected() {
+    console.log(this.card1);
+    console.log(this.card2);
+    console.log(this.containerDiv);
+  }
 
   // courseTracker(index: number, course: Course) {
   //   return course.id;
@@ -25,7 +33,7 @@ export class AppComponent {
   // }
 
   cardStyles(course: Course) {
-    if (course.category === "INTERMEDIATE") {
+    if (course.category === "BEGINNER") {
       return { "margin-left": "-30%", "margin-right": "30%" };
     } else if (course.category === "ADVANCED") {
       return { "margin-right": "-30%", "margin-left": "30%" };
