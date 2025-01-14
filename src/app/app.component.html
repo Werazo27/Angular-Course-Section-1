@@ -5,6 +5,8 @@
   />
 </div>
 
+<button id="add-course" (click)="addCourse()">Add Course</button>
+
 <div class="courses" #container>
   @for(course of courses; track course.id;) { @if($first) {
   <!-- for tracking with a custom function @for(course of courses; track courseTracker; let index = $index) { @if($first) { -->

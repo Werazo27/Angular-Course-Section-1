@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from "@angular/core";
 import { COURSES } from "../db-data";
 import { Course } from "./model/course";
 import { CourseCardComponent } from "./course-card/course-card.component";
@@ -21,6 +28,12 @@ export class AppComponent implements AfterViewInit {
   @ViewChild("container")
   containerDiv: ElementRef;
 
+  @ViewChildren(CourseCardComponent)
+  coursesView: QueryList<CourseCardComponent>;
+
+  @ViewChildren(CourseCardComponent, { read: ElementRef })
+  coursesViewRef: QueryList<ElementRef>;
+
   onCourseSelected() {
     console.log(this.card1);
     console.log(this.card2);
@@ -31,6 +44,15 @@ export class AppComponent implements AfterViewInit {
     console.log(this.card1);
     console.log(this.card2);
     console.log(this.containerDiv);
+    console.log(this.coursesViewRef);
+
+    this.coursesView.changes.subscribe((newList) => console.log(newList));
+  }
+
+  addCourse() {
+    let newCourse = { ...this.coursesView.first.course };
+    newCourse.id = this.coursesView.last.course.id + 1; // doesn't work right because of the 2 course cards manually added at the bottom of app.component.html
+    this.courses.push(newCourse);
   }
 
   // courseTracker(index: number, course: Course) {
