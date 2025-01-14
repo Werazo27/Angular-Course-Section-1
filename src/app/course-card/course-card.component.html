@@ -4,15 +4,11 @@
     {{ courseNumber || "" }} {{ course.description }}
   </div>
 
-  @if (course.iconUrl && course.altText) {
-  <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
-  } @else if (course.iconUrl && !course.altText) {
-  <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
-  } @else {
-  <h2>No photo available</h2>
-  }
+  <ng-content select="img"></ng-content>
 
-  <div class="course-description">{{ course.longDescription }}</div>
+  <ng-content select=".course-text"></ng-content>
+
+  <ng-content></ng-content>
 
   <div class="course-category">
     @switch (course.category) { @case('BEGINNER') {

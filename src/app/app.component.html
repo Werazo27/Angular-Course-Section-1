@@ -21,7 +21,21 @@
     [class.is-even]="$even"
     [class.is-odd]="$odd"
     [ngStyle]="cardStyles(course)"
-  />
+  >
+    @if (course.iconUrl && course.altText) {
+    <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
+    } @else if (course.iconUrl && !course.altText) {
+    <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
+    } @else {
+    <h2>No photo available</h2>
+    }
+    <div class="course-text">
+      <div class="course-description">{{ course.longDescription }}</div>
+      <h3>Lesson Count: {{ course.lessonsCount || "Unknown" }}</h3>
+    </div>
+    <p>Edit description:</p>
+    <textarea name="Edit Description"></textarea>
+  </course-card>
   } @else {
   <course-card
     [course]="course"
@@ -32,7 +46,21 @@
     [class.is-even]="$even"
     [class.is-odd]="$odd"
     [ngStyle]="cardStyles(course)"
-  />
+  >
+    @if (course.iconUrl && course.altText) {
+    <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
+    } @else if (course.iconUrl && !course.altText) {
+    <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
+    } @else {
+    <h2>No photo available</h2>
+    }
+    <div class="course-text">
+      <div class="course-description">{{ course.longDescription }}</div>
+      <h3>Lesson Count: {{ course.lessonsCount || "Unknown" }}</h3>
+    </div>
+    <p>Edit description:</p>
+    <textarea name="Edit Description"></textarea>
+  </course-card>
   } } @empty {
   <h1>No courses are available</h1>
   }
