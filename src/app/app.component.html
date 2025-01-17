@@ -23,12 +23,13 @@
     [ngStyle]="cardStyles(course)"
   >
     @if (course.iconUrl && course.altText) {
-    <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
+    <course-image [src]="course.iconUrl" [altText]="course.altText" />
     } @else if (course.iconUrl && !course.altText) {
-    <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
+    <course-image [src]="course.iconUrl" [altText]="'Course cover photo'" />
     } @else {
     <h2>No photo available</h2>
     }
+
     <div class="course-text">
       <div class="course-description">{{ course.longDescription }}</div>
       <h3>Lesson Count: {{ course.lessonsCount || "Unknown" }}</h3>
@@ -48,12 +49,13 @@
     [ngStyle]="cardStyles(course)"
   >
     @if (course.iconUrl && course.altText) {
-    <img width="300" [alt]="course.altText" [src]="course.iconUrl" />
+    <course-image [src]="course.iconUrl" [altText]="course.altText" />
     } @else if (course.iconUrl && !course.altText) {
-    <img width="300" alt="Course Cover Photo" [src]="course.iconUrl" />
+    <course-image [src]="course.iconUrl" [altText]="'Course cover photo'" />
     } @else {
     <h2>No photo available</h2>
     }
+
     <div class="course-text">
       <div class="course-description">{{ course.longDescription }}</div>
       <h3>Lesson Count: {{ course.lessonsCount || "Unknown" }}</h3>
