@@ -38,6 +38,7 @@ export class AppComponent implements AfterViewInit {
     console.log(this.card1);
     console.log(this.card2);
     console.log(this.containerDiv);
+    console.log(this.courses[0].iconUrl);
   }
 
   ngAfterViewInit(): void {

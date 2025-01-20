@@ -28,6 +28,7 @@ export class CourseCardComponent {
 
   onViewCourse() {
     console.log("Course viewed");
+    console.log(this.course.iconUrl);
     this.courseEmitter.emit(this.course);
   }
 

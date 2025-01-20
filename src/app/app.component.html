@@ -23,9 +23,17 @@
     [ngStyle]="cardStyles(course)"
   >
     @if (course.iconUrl && course.altText) {
-    <course-image [src]="course.iconUrl" [altText]="course.altText" />
+    <course-image
+      class="course-img"
+      [src]="course.iconUrl"
+      [altText]="course.altText"
+    />
     } @else if (course.iconUrl && !course.altText) {
-    <course-image [src]="course.iconUrl" [altText]="'Course cover photo'" />
+    <course-image
+      class="course-img"
+      [src]="course.iconUrl"
+      [altText]="'Course cover photo'"
+    />
     } @else {
     <h2>No photo available</h2>
     }
@@ -49,9 +57,17 @@
     [ngStyle]="cardStyles(course)"
   >
     @if (course.iconUrl && course.altText) {
-    <course-image [src]="course.iconUrl" [altText]="course.altText" />
+    <course-image
+      class="course-img"
+      [src]="course.iconUrl"
+      [altText]="course.altText"
+    />
     } @else if (course.iconUrl && !course.altText) {
-    <course-image [src]="course.iconUrl" [altText]="'Course cover photo'" />
+    <course-image
+      class="course-img"
+      [src]="course.iconUrl"
+      [altText]="'Course cover photo'"
+    />
     } @else {
     <h2>No photo available</h2>
     }

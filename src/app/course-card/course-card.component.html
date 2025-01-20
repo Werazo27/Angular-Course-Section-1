@@ -1,10 +1,14 @@
 @if (course) {
 <div class="course-card" [ngClass]="cardClasses()">
   <div class="course-title">
-    {{ courseNumber || "" }} {{ course.description }}
+    {{
+      courseNumber
+        ? courseNumber + " - " + course.description
+        : course.description
+    }}
   </div>
 
-  <ng-content select="course-image"></ng-content>
+  <ng-content select=".course-img"></ng-content>
 
   <ng-content select=".course-text"></ng-content>
 
